@@ -1,0 +1,28 @@
+#设置端口号
+server:
+  port: 8090
+#nacos注册中心地址
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 1f0a6510-d871-4875-af15-bd350075b3a7
+  # 应用名称
+  application:
+    name: dubbo-sevice2
+#dubbo扫描路径
+dubbo:
+  scan:
+    base-packages: com.itheima.microservice.service2
+  protocol:
+    name: dubbo
+    port: 20891
+  registry:
+    address: nacos://127.0.0.1:8848
+  application:
+    qos-enable: false
+  consumer:
+    check: false
+
+

@@ -1,0 +1,18 @@
+server:
+  port: 8087
+#spring:
+#  application:
+#    name: nacos-restful-provider
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+
+spring:
+  application:
+    name: nacos-restful-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 1f0a6510-d871-4875-af15-bd350075b3a7

@@ -1,0 +1,31 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: nacos-restful-consumer
+  cloud:
+    nacos:
+      #nacos服务发现相关信息
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 1f0a6510-d871-4875-af15-bd350075b3a7
+      #nacos配置中心相关信息
+      config:
+        server-addr: 127.0.0.1:8848
+        group: DEFAULT_GROUP
+        namespace: 1f0a6510-d871-4875-af15-bd350075b3a7
+        file-extension: yml
+        ext-config[0]:
+          data-id: ext-config-comon01.yaml
+          group: COMMON_GROUP
+          refresh: true
+        ext-config[1]:
+          data-id: ext-config-comon02.yaml
+          group: COMMON_GROUP
+          refresh: true
+
+nacos-restful-provider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#服务提供方地址
+providerAddress: 127.0.0.1:8087
